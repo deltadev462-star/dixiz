@@ -53,6 +53,15 @@ export const LanguageProvider = ({ children }) => {
           
           setCurrentLanguage(initialLanguage);
           document.documentElement.lang = initialLanguage;
+          
+          // Set initial RTL/LTR direction
+          if (initialLanguage === 'ar') {
+            document.documentElement.dir = 'rtl';
+            document.documentElement.style.direction = 'rtl';
+          } else {
+            document.documentElement.dir = 'ltr';
+            document.documentElement.style.direction = 'ltr';
+          }
         } else {
           // Fallback if no languages in database
           const fallbackLanguages = [{ code: 'en', name: 'English', native_name: 'English', is_default: true }];
@@ -83,6 +92,15 @@ export const LanguageProvider = ({ children }) => {
       localStorage.setItem('selectedLanguage', languageCode);
       localStorage.setItem('userHasChangedLanguage', 'true'); // Mark that user explicitly changed language
       document.documentElement.lang = languageCode;
+      
+      // Set RTL for Arabic
+      if (languageCode === 'ar') {
+        document.documentElement.dir = 'rtl';
+        document.documentElement.style.direction = 'rtl';
+      } else {
+        document.documentElement.dir = 'ltr';
+        document.documentElement.style.direction = 'ltr';
+      }
       
       // Clear cache when language changes
       if ('caches' in window) {

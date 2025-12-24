@@ -60,6 +60,30 @@ async function handle(req) {
 
 // Languages
 export async function fetchActiveLanguages() {
+  if (DISABLE_DATABASE) {
+    // Return default languages when database is disabled
+    return [
+      {
+        code: 'en',
+        name: 'English',
+        native_name: 'English',
+        flag: '🇬🇧',
+        is_active: true,
+        is_default: true,
+        sort_order: 1
+      },
+      {
+        code: 'ar',
+        name: 'Arabic',
+        native_name: 'العربية',
+        flag: '🇪🇬',
+        is_active: true,
+        is_default: false,
+        sort_order: 2
+      }
+    ];
+  }
+  
   return handle(
     supabase
       .from('languages')

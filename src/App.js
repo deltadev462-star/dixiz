@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { LoadingProvider } from './contexts/LoadingContext';
-import { LanguageProvider } from './contexts/LanguageContext';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import LoadingSpinner from './components/LoadingSpinner';
+import rtlPlugin from 'stylis-plugin-rtl';
+import { CacheProvider } from '@emotion/react';
+import createCache from '@emotion/cache';
+import { prefixer } from 'stylis';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import ProductCategories from './components/ProductCategories';
@@ -62,8 +66,37 @@ import AdminBlogPosts from './admin/pages/BlogPosts';
 import AdminBlogCategories from './admin/pages/BlogCategories';
 import AdminBlogTags from './admin/pages/BlogTags';
 
-const theme = createTheme({
-  palette: {
+// Create rtl cache
+const cacheRtl = createCache({
+  key: 'muirtl',
+  stylisPlugins: [prefixer, rtlPlugin],
+});
+
+// Create ltr cache
+const cacheLtr = createCache({
+  key: 'muiltr',
+  stylisPlugins: [prefixer],
+});
+
+const ThemeWrapper = ({ children }) => {
+  const { currentLanguage } = useLanguage();
+  const isRtl = currentLanguage === 'ar';
+  
+  // Add Google Font that supports Arabic
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+    
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+  
+  const theme = useMemo(() => createTheme({
+    direction: isRtl ? 'rtl' : 'ltr',
+    palette: {
     primary: {
       main: '#D32F2F', // Red - like Dixie Mills
       light: '#FF6659',
@@ -84,7 +117,9 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: isRtl
+      ? '"Noto Kufi Arabic", "Roboto", "Helvetica", "Arial", sans-serif'
+      : '"Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
       fontWeight: 700,
     },
@@ -101,7 +136,17 @@ const theme = createTheme({
   shape: {
     borderRadius: 8,
   },
-});
+  }), [isRtl]);
+  
+  return (
+    <CacheProvider value={isRtl ? cacheRtl : cacheLtr}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </CacheProvider>
+  );
+};
 
 // Home page component
 const HomePage = () => {
@@ -191,17 +236,16 @@ const AppContent = () => {
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <LoadingProvider>
-        <LanguageProvider>
+    <LoadingProvider>
+      <LanguageProvider>
+        <ThemeWrapper>
           <Router>
             <AppContent />
             <LoadingSpinner />
           </Router>
-        </LanguageProvider>
-      </LoadingProvider>
-    </ThemeProvider>
+        </ThemeWrapper>
+      </LanguageProvider>
+    </LoadingProvider>
   );
 }
 
