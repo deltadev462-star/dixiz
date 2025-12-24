@@ -125,6 +125,10 @@ const defaultTranslations = {
     'order_form.errors.phone_required': 'Phone number is required',
     'order_form.errors.address_required': 'Delivery address is required',
     'order_form.errors.products_required': 'Please add at least one product',
+    // Gallery translations
+    'gallery.title': 'Our Production Excellence',
+    'gallery.subtitle': 'Witness our state-of-the-art facilities and premium quality products',
+    'gallery.cta': 'Experience the quality that makes Dixie Mills the preferred choice for restaurants and homes across Egypt',
   },
   es: {
     'button.details': 'Detalles',
@@ -445,6 +449,10 @@ const defaultTranslations = {
     'order_form.errors.phone_required': 'رقم الهاتف مطلوب',
     'order_form.errors.address_required': 'عنوان التسليم مطلوب',
     'order_form.errors.products_required': 'يرجى إضافة منتج واحد على الأقل',
+    // Gallery translations
+    'gallery.title': 'تميزنا في الإنتاج',
+    'gallery.subtitle': 'شاهد منشآتنا الحديثة ومنتجاتنا عالية الجودة',
+    'gallery.cta': 'اكتشف الجودة التي تجعل ديكسي ميلز الخيار المفضل للمطاعم والمنازل في جميع أنحاء مصر',
   },
 };
 
