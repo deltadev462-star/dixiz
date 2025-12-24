@@ -21,3 +21,30 @@ supabase
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Environment variables
+.env
+.env.*
+
+# Data directory (contains database and keys)
+/data/
+data/
+
+# SSL certificates
+/letsencrypt/
+letsencrypt/
+
+# Logs
+*.log
+*.log.*
+logs/
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Private keys
+*.pem
+*.key
+keys.json
