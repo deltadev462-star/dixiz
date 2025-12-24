@@ -177,19 +177,51 @@ export async function fetchCategories(language = null) {
       },
       {
         id: 2,
-        name: "Ketchup",
-        slug: "ketchup",
-        description: "Classic and gourmet ketchup varieties",
-        image: "/599314044_1968146010580779_2476807614262376798_n.jpg",
-        sort_order: 2
-      },
-      {
-        id: 3,
         name: "Mayonnaise",
         slug: "mayonnaise",
         description: "Creamy mayonnaise selections",
         image: "/600322421_863886852676225_6953138210890679948_n.jpg",
+        sort_order: 2
+      },
+      {
+        id: 3,
+        name: "Far East Sauce",
+        slug: "far-east-sauce",
+        description: "Exotic Asian-inspired sauces",
+        image: "/599314044_1968146010580779_2476807614262376798_n.jpg",
         sort_order: 3
+      },
+      {
+        id: 4,
+        name: "Toppings",
+        slug: "toppings",
+        description: "Delicious toppings for every meal",
+        image: "/600503891_1570354127204849_4195460424425289695_n.jpg",
+        sort_order: 4
+      },
+      {
+        id: 5,
+        name: "Dixie Kids",
+        slug: "dixie-kids",
+        description: "Kid-friendly sauces and condiments",
+        image: "/601193856_784124338036979_3731309117956689072_n.jpg",
+        sort_order: 5
+      },
+      {
+        id: 6,
+        name: "Professional",
+        slug: "professional",
+        description: "Restaurant-grade professional sauces",
+        image: "/604437258_879958204720188_4863242959954255480_n.jpg",
+        sort_order: 6
+      },
+      {
+        id: 7,
+        name: "Dressings",
+        slug: "dressings",
+        description: "Fresh salad dressings and vinaigrettes",
+        image: "/598159305_1186328736969135_3556490608802330705_n.jpg",
+        sort_order: 7
       }
     ];
   }
