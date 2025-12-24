@@ -9,7 +9,7 @@ const AIChatbot = ({ isOpen, onClose }) => {
     {
       id: 1,
       role: 'assistant',
-      content: 'Hello! I\'m your AI Medical Equipment Assistant. I can help you find the perfect medical equipment for your needs. What are you looking for today?'
+      content: 'Hello! I\'m your AI Culinary Assistant. I can help you find the perfect sauces and condiments for your culinary needs. What flavors are you looking for today?'
     }
   ]);
   const [inputMessage, setInputMessage] = useState('');
@@ -42,7 +42,7 @@ const AIChatbot = ({ isOpen, onClose }) => {
       setMessages(prev => [...prev, userMsg]);
 
       // Call Supabase Edge Function
-      const { data, error } = await supabase.functions.invoke('ai-medical-assistant', {
+      const { data, error } = await supabase.functions.invoke('ai-culinary-assistant', {
         body: {
           messages: [...messages, userMsg].map(m => ({
             role: m.role,
@@ -152,7 +152,7 @@ const AIChatbot = ({ isOpen, onClose }) => {
       <div className="chatbot-header">
         <div className="header-content">
           <FaRobot className="header-icon" />
-          <h3>AI Medical Assistant</h3>
+          <h3>AI Culinary Assistant</h3>
         </div>
         <button className="close-btn" onClick={onClose}>
           <FaTimes />
@@ -196,7 +196,7 @@ const AIChatbot = ({ isOpen, onClose }) => {
           value={inputMessage}
           onChange={(e) => setInputMessage(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder="Ask about medical equipment..."
+          placeholder="Ask about sauces and condiments..."
           disabled={isLoading}
         />
         <button type="submit" disabled={isLoading || !inputMessage.trim()}>

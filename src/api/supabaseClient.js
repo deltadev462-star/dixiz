@@ -8,7 +8,7 @@ const supabaseAnonKey =
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     persistSession: true,
-    storageKey: 'wimed-auth',
+    storageKey: 'dixie-auth',
     detectSessionInUrl: true,
     autoRefreshToken: true,
   },

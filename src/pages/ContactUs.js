@@ -82,7 +82,7 @@ const ContactUs = () => {
         key: 'address',
         icon: iconMap.address,
         title: t('contact.address_title', 'Address'),
-        content: ['123 Medical Street', 'London, UK', 'SW1A 1AA'],
+        content: ['Ali Mubarak Street', 'Tanta, Egypt'],
         gradient: gradientMap.address,
       },
       {
@@ -103,7 +103,7 @@ const ContactUs = () => {
         key: 'email',
         icon: iconMap.email,
         title: t('contact.email_title', 'Email'),
-        content: siteSettings?.contact_email ? [siteSettings.contact_email] : ['info@wimed.fr'],
+        content: siteSettings?.contact_email ? [siteSettings.contact_email] : ['info@dixiemills.com'],
         gradient: gradientMap.email,
       },
       {

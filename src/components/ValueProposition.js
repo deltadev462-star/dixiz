@@ -7,7 +7,7 @@ const ValueProposition = () => {
   const [loading, setLoading] = useState(true);
   const { currentLanguage } = useLanguage();
   const [valueText, setValueText] = useState(
-    'With experience of +25 years and diverse range of products. We are a global service provider specializing in Used and Refurbished medical equipment and Services'
+    'With experience of +25 years and diverse range of products. We are a leading provider specializing in premium sauces, condiments, and culinary excellence'
   );
 
   useEffect(() => {
