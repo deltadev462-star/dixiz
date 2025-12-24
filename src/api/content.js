@@ -101,7 +101,7 @@ export async function fetchSiteSettings(language = null) {
       id: 1,
       hero_title: "Welcome to Dixie Mills",
       hero_subtitle: "Premium Sauces, Ketchup & Mayonnaise - Crafted with Care, Served with Pride",
-      hero_image: "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=1600&h=800&fit=crop",
+      hero_image: "/600541322_1495602671526184_5431854180680454580_n.jpg",
       value_prop_title: "Why Dixie Mills?",
       value_prop_subtitle: "Crafting premium sauces and condiments that bring flavor to life",
       categories_title: "Explore Our Products",
@@ -172,7 +172,7 @@ export async function fetchCategories(language = null) {
         name: "Sauces",
         slug: "sauces",
         description: "Our premium sauce collection",
-        image: "https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=800&h=600&fit=crop",
+        image: "/599211389_843345045263142_7314016946812866671_n.jpg",
         sort_order: 1
       },
       {
@@ -180,7 +180,7 @@ export async function fetchCategories(language = null) {
         name: "Ketchup",
         slug: "ketchup",
         description: "Classic and gourmet ketchup varieties",
-        image: "https://images.unsplash.com/photo-1592417817038-d13fd7342605?w=800&h=600&fit=crop",
+        image: "/599314044_1968146010580779_2476807614262376798_n.jpg",
         sort_order: 2
       },
       {
@@ -188,7 +188,7 @@ export async function fetchCategories(language = null) {
         name: "Mayonnaise",
         slug: "mayonnaise",
         description: "Creamy mayonnaise selections",
-        image: "https://images.unsplash.com/photo-1627735814101-3dc5b021acdb?w=800&h=600&fit=crop",
+        image: "/600322421_863886852676225_6953138210890679948_n.jpg",
         sort_order: 3
       }
     ];
@@ -283,7 +283,7 @@ export async function fetchNewProducts(language = null) {
         id: 1,
         name: "Spicy BBQ Sauce",
         description: "Bold and smoky with a kick",
-        image: "https://images.unsplash.com/photo-1626544827763-d516dce335e2?w=800&h=600&fit=crop",
+        image: "/600503891_1570354127204849_4195460424425289695_n.jpg",
         price: 5.99,
         is_new: true
       },
@@ -291,7 +291,7 @@ export async function fetchNewProducts(language = null) {
         id: 2,
         name: "Garlic Mayo",
         description: "Creamy with roasted garlic",
-        image: "https://images.unsplash.com/photo-1628185398198-8df21b87b561?w=800&h=600&fit=crop",
+        image: "/601193856_784124338036979_3731309117956689072_n.jpg",
         price: 4.99,
         is_new: true
       },
@@ -299,7 +299,7 @@ export async function fetchNewProducts(language = null) {
         id: 3,
         name: "Sweet Chili Sauce",
         description: "Perfect balance of sweet and heat",
-        image: "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=800&h=600&fit=crop",
+        image: "/604437258_879958204720188_4863242959954255480_n.jpg",
         price: 6.49,
         is_new: true
       }
@@ -453,7 +453,7 @@ export async function fetchAboutSections(language = null) {
         id: 1,
         title: "Our Story",
         content: "Founded in 1995, Dixie Mills has been crafting premium sauces and condiments for over 25 years. What started as a family recipe has grown into a beloved brand trusted by thousands.",
-        image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
+        image: "/599230789_2267324233744067_4225104279596653731_n.jpg",
         sort_order: 1
       },
       {
@@ -553,7 +553,7 @@ export async function fetchContactBlocks(language = null) {
       {
         id: 2,
         title: "Contact Us",
-        content_lines: ["Phone: +20 40 3344556", "Email: info@dixiemills.com"],
+        content_lines: ["Phone: 01091678197", "Email: info@dixiemills.com"],
         sort_order: 2
       },
       {

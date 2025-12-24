@@ -7,8 +7,8 @@ const FloatingActions = () => {
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   
   // WhatsApp configuration
-  const whatsappNumber = '+4915258585556'; // Replace with your actual WhatsApp business number
-  const whatsappMessage = encodeURIComponent('Hello, I would like to inquire about your medical equipment.');
+  const whatsappNumber = '+201091678197'; // Egyptian WhatsApp number
+  const whatsappMessage = encodeURIComponent('Hello, I would like to inquire about your sauces and condiments.');
   const whatsappLink = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${whatsappMessage}`;
   
   const handleWhatsAppClick = () => {
@@ -37,7 +37,7 @@ const FloatingActions = () => {
           className="floating-action-btn ai-btn"
           onClick={toggleChatbot}
           aria-label="Open AI Assistant"
-          title="AI Medical Equipment Assistant"
+          title="AI Sauce Assistant"
         >
           <FaRobot size={24} />
         </button>
