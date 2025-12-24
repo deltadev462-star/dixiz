@@ -99,7 +99,7 @@ const MapLocation = () => {
   const phoneBlock = blockByKey['phone'];
   const hoursBlock = blockByKey['hours'];
 
-  const mapSrc = settings?.map_embed_url || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13752.611402646!2d31.0012!3d30.7868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7c95f9b9c8c6b%3A0x1e1e1e1e1e1e1e1e!2sTanta%2C%20Gharbia%20Governorate%2C%20Egypt!5e0!3m2!1sen!2seg!4v1703393200000!5m2!1sen!2seg';
+  const mapSrc = settings?.map_embed_url || 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3438.211507097671!2d31.00355237543469!3d30.786878574639977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDQ3JzEyLjgiTiAzMcKwMDAnMjUuNCJF!5e0!3m2!1sen!2seg!4v1703550000000!5m2!1sen!2seg';
 
   return (
     <Box sx={{ py: { xs: 4, md: 8 }, backgroundColor: '#ffffff' }}>
@@ -319,7 +319,7 @@ const MapLocation = () => {
               }}
               onClick={() =>
                 window.open(
-                  'https://www.google.com/maps/place/Ali+Mubarak+St,+Tanta,+Gharbia+Governorate,+Egypt',
+                  'https://maps.app.goo.gl/uBdWRXKzxhXzpyLS7',
                   '_blank'
                 )
               }

@@ -19,6 +19,7 @@ import CollapsibleContent from './components/CollapsibleContent';
 import Footer from './components/Footer';
 import PageTransition from './components/PageTransition';
 import FloatingActions from './components/FloatingActions';
+import OrderForm from './components/OrderForm';
 
 // Import category pages - renamed for food products
 import Sauces from './pages/Sauces';
@@ -158,6 +159,7 @@ const HomePage = () => {
       <TrustedBrands />
       <CollapsibleContent />
       <MapLocation />
+      <OrderForm />
       <Footer />
     </>
   );
