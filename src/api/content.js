@@ -693,11 +693,14 @@ export async function fetchHeaderNavItems(language = null) {
   if (DISABLE_DATABASE) {
     // Return sauce shop navigation
     return [
-      { id: 1, name: "Home", link: "/", sort_order: 1, is_active: true },
-      { id: 2, name: "Products", link: "/products", sort_order: 2, is_active: true },
-      { id: 3, name: "About", link: "/about-us", sort_order: 3, is_active: true },
-      { id: 4, name: "Services", link: "/services", sort_order: 4, is_active: true },
-      { id: 5, name: "Contact", link: "/contact-us", sort_order: 5, is_active: true }
+      { id: 1, name: "Home", link: "/", route: "/", sort_order: 1, is_active: true },
+      { id: 2, name: "Sauces", link: "/sauces", route: "/sauces", sort_order: 2, is_active: true },
+      { id: 3, name: "Mayonnaise", link: "/mayonnaise", route: "/mayonnaise", sort_order: 3, is_active: true },
+      { id: 4, name: "Far East Sauce", link: "/far-east-sauce", route: "/far-east-sauce", sort_order: 4, is_active: true },
+      { id: 5, name: "Toppings", link: "/toppings", route: "/toppings", sort_order: 5, is_active: true },
+      { id: 6, name: "Dixie Kids", link: "/dixie-kids", route: "/dixie-kids", sort_order: 6, is_active: true },
+      { id: 7, name: "Professional", link: "/professional", route: "/professional", sort_order: 7, is_active: true },
+      { id: 8, name: "Dressings", link: "/dressings", route: "/dressings", sort_order: 8, is_active: true }
     ];
   }
   

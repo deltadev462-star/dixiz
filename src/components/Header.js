@@ -66,12 +66,13 @@ const Header = () => {
           } else {
             setNavItems([
               { id: 1, name: 'Home', route: '/' },
-              { id: 2, name: 'Products', route: '#' },
-              { id: 3, name: 'Private Label', route: '/private-label' },
-              { id: 4, name: 'Services', route: '/services' },
-              { id: 5, name: 'About Us', route: '/about-us' },
-              { id: 6, name: 'Blog', route: '/blog' },
-              { id: 7, name: 'Contact', route: '/contact-us' },
+              { id: 2, name: 'Sauces', route: '/sauces' },
+              { id: 3, name: 'Mayonnaise', route: '/mayonnaise' },
+              { id: 4, name: 'Far East Sauce', route: '/far-east-sauce' },
+              { id: 5, name: 'Toppings', route: '/toppings' },
+              { id: 6, name: 'Dixie Kids', route: '/dixie-kids' },
+              { id: 7, name: 'Professional', route: '/professional' },
+              { id: 8, name: 'Dressings', route: '/dressings' },
             ]);
           }
           
@@ -87,12 +88,13 @@ const Header = () => {
         if (!cancelled) {
           setNavItems([
             { id: 1, name: 'Home', route: '/' },
-            { id: 2, name: 'Products', route: '#' },
-            { id: 3, name: 'Private Label', route: '/private-label' },
-            { id: 4, name: 'Services', route: '/services' },
-            { id: 5, name: 'About Us', route: '/about-us' },
-            { id: 6, name: 'Blog', route: '/blog' },
-            { id: 7, name: 'Contact', route: '/contact-us' },
+            { id: 2, name: 'Sauces', route: '/sauces' },
+            { id: 3, name: 'Mayonnaise', route: '/mayonnaise' },
+            { id: 4, name: 'Far East Sauce', route: '/far-east-sauce' },
+            { id: 5, name: 'Toppings', route: '/toppings' },
+            { id: 6, name: 'Dixie Kids', route: '/dixie-kids' },
+            { id: 7, name: 'Professional', route: '/professional' },
+            { id: 8, name: 'Dressings', route: '/dressings' },
           ]);
         }
       } finally {
