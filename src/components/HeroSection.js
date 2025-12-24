@@ -26,7 +26,7 @@ const HeroSection = () => {
             ...prev,
             hero_title: data.hero_title || prev.hero_title,
             hero_subtitle: data.hero_subtitle || prev.hero_subtitle,
-            hero_image_url: data.hero_image_url || prev.hero_image_url,
+            hero_image_url: data.hero_image || data.hero_image_url || prev.hero_image_url,
           }));
         }
       } catch {
