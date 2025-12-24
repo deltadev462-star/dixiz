@@ -101,7 +101,7 @@ export async function fetchSiteSettings(language = null) {
       id: 1,
       hero_title: "Welcome to Dixie Mills",
       hero_subtitle: "Premium Sauces, Ketchup & Mayonnaise - Crafted with Care, Served with Pride",
-      hero_image: "/600541322_1495602671526184_5431854180680454580_n.jpg",
+      hero_image_url: "/600541322_1495602671526184_5431854180680454580_n.jpg",
       value_prop_title: "Why Dixie Mills?",
       value_prop_subtitle: "Crafting premium sauces and condiments that bring flavor to life",
       categories_title: "Explore Our Products",
@@ -172,7 +172,7 @@ export async function fetchCategories(language = null) {
         name: "Sauces",
         slug: "sauces",
         description: "Our premium sauce collection",
-        image: "/599211389_843345045263142_7314016946812866671_n.jpg",
+        image_url: "/599211389_843345045263142_7314016946812866671_n.jpg",
         sort_order: 1
       },
       {
@@ -180,7 +180,7 @@ export async function fetchCategories(language = null) {
         name: "Mayonnaise",
         slug: "mayonnaise",
         description: "Creamy mayonnaise selections",
-        image: "/600322421_863886852676225_6953138210890679948_n.jpg",
+        image_url: "/600322421_863886852676225_6953138210890679948_n.jpg",
         sort_order: 2
       },
       {
@@ -188,7 +188,7 @@ export async function fetchCategories(language = null) {
         name: "Far East Sauce",
         slug: "far-east-sauce",
         description: "Exotic Asian-inspired sauces",
-        image: "/599314044_1968146010580779_2476807614262376798_n.jpg",
+        image_url: "/599314044_1968146010580779_2476807614262376798_n.jpg",
         sort_order: 3
       },
       {
@@ -196,7 +196,7 @@ export async function fetchCategories(language = null) {
         name: "Toppings",
         slug: "toppings",
         description: "Delicious toppings for every meal",
-        image: "/600503891_1570354127204849_4195460424425289695_n.jpg",
+        image_url: "/600503891_1570354127204849_4195460424425289695_n.jpg",
         sort_order: 4
       },
       {
@@ -204,7 +204,7 @@ export async function fetchCategories(language = null) {
         name: "Dixie Kids",
         slug: "dixie-kids",
         description: "Kid-friendly sauces and condiments",
-        image: "/601193856_784124338036979_3731309117956689072_n.jpg",
+        image_url: "/601193856_784124338036979_3731309117956689072_n.jpg",
         sort_order: 5
       },
       {
@@ -212,7 +212,7 @@ export async function fetchCategories(language = null) {
         name: "Professional",
         slug: "professional",
         description: "Restaurant-grade professional sauces",
-        image: "/604437258_879958204720188_4863242959954255480_n.jpg",
+        image_url: "/604437258_879958204720188_4863242959954255480_n.jpg",
         sort_order: 6
       },
       {
@@ -220,7 +220,7 @@ export async function fetchCategories(language = null) {
         name: "Dressings",
         slug: "dressings",
         description: "Fresh salad dressings and vinaigrettes",
-        image: "/598159305_1186328736969135_3556490608802330705_n.jpg",
+        image_url: "/598159305_1186328736969135_3556490608802330705_n.jpg",
         sort_order: 7
       }
     ];
@@ -315,7 +315,7 @@ export async function fetchNewProducts(language = null) {
         id: 1,
         name: "Spicy BBQ Sauce",
         description: "Bold and smoky with a kick",
-        image: "/600503891_1570354127204849_4195460424425289695_n.jpg",
+        image_url: "/600503891_1570354127204849_4195460424425289695_n.jpg",
         price: 5.99,
         is_new: true
       },
@@ -323,7 +323,7 @@ export async function fetchNewProducts(language = null) {
         id: 2,
         name: "Garlic Mayo",
         description: "Creamy with roasted garlic",
-        image: "/601193856_784124338036979_3731309117956689072_n.jpg",
+        image_url: "/601193856_784124338036979_3731309117956689072_n.jpg",
         price: 4.99,
         is_new: true
       },
@@ -331,7 +331,7 @@ export async function fetchNewProducts(language = null) {
         id: 3,
         name: "Sweet Chili Sauce",
         description: "Perfect balance of sweet and heat",
-        image: "/604437258_879958204720188_4863242959954255480_n.jpg",
+        image_url: "/604437258_879958204720188_4863242959954255480_n.jpg",
         price: 6.49,
         is_new: true
       }
@@ -485,7 +485,7 @@ export async function fetchAboutSections(language = null) {
         id: 1,
         title: "Our Story",
         content: "Founded in 1995, Dixie Mills has been crafting premium sauces and condiments for over 25 years. What started as a family recipe has grown into a beloved brand trusted by thousands.",
-        image: "/599230789_2267324233744067_4225104279596653731_n.jpg",
+        image_url: "/599230789_2267324233744067_4225104279596653731_n.jpg",
         sort_order: 1
       },
       {
