@@ -20,7 +20,6 @@ import Footer from './components/Footer';
 import PageTransition from './components/PageTransition';
 import FloatingActions from './components/FloatingActions';
 import OrderForm from './components/OrderForm';
-import PhotoGallery from './components/PhotoGallery';
 
 // Import category pages - renamed for food products
 import Sauces from './pages/Sauces';
@@ -156,7 +155,6 @@ const HomePage = () => {
     <>
       <HeroSection />
       <ProductCategories />
-      <PhotoGallery />
       <NewArrivals />
       <TrustedBrands />
       <CollapsibleContent />

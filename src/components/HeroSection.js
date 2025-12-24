@@ -7,6 +7,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 const HeroSection = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { currentLanguage } = useLanguage();
   const [settings, setSettings] = useState({
     hero_title: 'Dixie Mills — Your Home for Sauces, Ketchup, and Mayonnaise!',
@@ -15,6 +16,23 @@ const HeroSection = () => {
     hero_image_url:
       'https://images.unsplash.com/photo-1613564834361-9436948817d1?auto=format&fit=crop&w=1920&q=80',
   });
+
+  // Array of 4 high-quality product images
+  const heroImages = [
+    '/598159305_1186328736969135_3556490608802330705_n.jpg',
+    '/599211389_843345045263142_7314016946812866671_n.jpg',
+    '/600322421_863886852676225_6953138210890679948_n.jpg',
+    '/604437258_879958204720188_4863242959954255480_n.jpg'
+  ];
+
+  // Auto-rotate images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -40,7 +58,7 @@ const HeroSection = () => {
     };
   }, [currentLanguage]);
 
-  const bgUrl = settings.hero_image_url;
+  const bgUrl = heroImages[currentImageIndex];
 
   return (
     <Box
@@ -50,21 +68,69 @@ const HeroSection = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundImage: `url(${bgUrl})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.4)',
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%)',
-        },
+        overflow: 'hidden',
       }}
     >
+      {/* Background Images */}
+      {heroImages.map((image, index) => (
+        <Box
+          key={index}
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: `url(${image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: currentImageIndex === index ? 1 : 0,
+            transition: 'opacity 1.5s ease-in-out',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%)',
+            },
+          }}
+        />
+      ))}
+
+      {/* Image Indicators */}
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: 30,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          gap: 1,
+          zIndex: 2,
+        }}
+      >
+        {heroImages.map((_, index) => (
+          <Box
+            key={index}
+            onClick={() => setCurrentImageIndex(index)}
+            sx={{
+              width: 12,
+              height: 12,
+              borderRadius: '50%',
+              backgroundColor: currentImageIndex === index ? '#ffffff' : 'rgba(255, 255, 255, 0.5)',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                backgroundColor: currentImageIndex === index ? '#ffffff' : 'rgba(255, 255, 255, 0.7)',
+                transform: 'scale(1.2)',
+              },
+            }}
+          />
+        ))}
+      </Box>
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ textAlign: 'center' }}>
           <Fade in={!loading} timeout={1000}>
