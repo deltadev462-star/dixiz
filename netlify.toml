@@ -11,6 +11,4 @@
   NODE_VERSION = "18"
   CI = "false"
 
-[context.production.environment]
-  REACT_APP_SUPABASE_URL = "Set this in Netlify dashboard"
-  REACT_APP_SUPABASE_ANON_KEY = "Set this in Netlify dashboard"
+# Environment variables are configured in the Netlify dashboard
