@@ -9,9 +9,9 @@ const HeroSection = () => {
   const [loading, setLoading] = useState(true);
   const { currentLanguage } = useLanguage();
   const [settings, setSettings] = useState({
-    hero_title: 'Premium Sauces & Condiments Since 1947',
+    hero_title: 'Dixie Mills — Your Home for Sauces, Ketchup, and Mayonnaise!',
     hero_subtitle:
-      'Crafting exceptional flavors for foodservice and retail. From classic ketchup to gourmet sauces, we bring taste to every table.',
+      'Delicious flavors. Quality ingredients. Discover our mouth-watering sauces, rich ketchup, and creamy mayonnaise—perfect for every meal.',
     hero_image_url:
       'https://images.unsplash.com/photo-1613564834361-9436948817d1?auto=format&fit=crop&w=1920&q=80',
   });

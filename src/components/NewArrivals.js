@@ -26,8 +26,8 @@ const NewArrivals = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [allProducts, setAllProducts] = useState([]);
-  const [sectionTitle, setSectionTitle] = useState('New Products');
-  const [sectionSubtitle, setSectionSubtitle] = useState('Discover our latest additions to the product line - fresh flavors and exciting new recipes');
+  const [sectionTitle, setSectionTitle] = useState('New Arrivals');
+  const [sectionSubtitle, setSectionSubtitle] = useState('Fresh flavors just added! Be the first to taste our latest creations.');
   const { currentLanguage } = useLanguage();
   const { t } = useTranslation();
   const theme = useTheme();

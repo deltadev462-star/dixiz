@@ -47,6 +47,31 @@ const CollapsibleContent = () => {
   return (
     <Box sx={{ py: 8, backgroundColor: 'white' }}>
       <Container maxWidth="lg">
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography
+            variant="h3"
+            component="h2"
+            sx={{
+              fontWeight: 700,
+              color: '#212121',
+              mb: 2,
+              fontSize: { xs: '2rem', md: '3rem' },
+            }}
+          >
+            Why Dixie Mills?
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              color: '#757575',
+              maxWidth: '600px',
+              mx: 'auto',
+              fontSize: { xs: '1rem', md: '1.25rem' },
+            }}
+          >
+            Quality you can trust. Flavors you'll love.
+          </Typography>
+        </Box>
         {loading
           ? skeletons.map((_, idx) => (
               <Accordion key={`s-${idx}`} sx={{ mb: 2, boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>

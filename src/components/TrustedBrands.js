@@ -6,7 +6,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 const TrustedBrands = () => {
   const [loading, setLoading] = useState(true);
   const [brands, setBrands] = useState([]);
-  const [sectionTitle, setSectionTitle] = useState('Trusted by Leading Restaurants & Retailers');
+  const [sectionTitle, setSectionTitle] = useState('What Our Customers Say');
+  const [sectionSubtitle, setSectionSubtitle] = useState('Real feedback from sauce lovers just like you');
   const { currentLanguage } = useLanguage();
 
   // Default food industry partner brands
@@ -175,7 +176,7 @@ const TrustedBrands = () => {
               mx: 'auto',
             }}
           >
-            Our products are featured in major retail chains and restaurants across the nation
+            {sectionSubtitle}
           </Typography>
         </Box>
         <Box

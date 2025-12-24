@@ -19,7 +19,8 @@ const ProductCategories = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
-  const [sectionTitle, setSectionTitle] = useState('Our Product Categories');
+  const [sectionTitle, setSectionTitle] = useState('Explore Our Products');
+  const [sectionSubtitle, setSectionSubtitle] = useState('Discover the perfect sauce for every dish—sauces, ketchup, and mayonnaise crafted with passion.');
   const { currentLanguage } = useLanguage();
 
   // Default food categories
@@ -87,6 +88,9 @@ const ProductCategories = () => {
           setCategories(rows && rows.length > 0 ? rows : defaultCategories);
           if (settings?.categories_title) {
             setSectionTitle(settings.categories_title);
+          }
+          if (settings?.categories_subtitle) {
+            setSectionSubtitle(settings.categories_subtitle);
           }
         }
       } finally {
@@ -252,7 +256,7 @@ const ProductCategories = () => {
               fontSize: { xs: '1rem', md: '1.25rem' },
             }}
           >
-            From classic condiments to gourmet sauces, discover our full range of premium products
+            {sectionSubtitle}
           </Typography>
         </Box>
         
