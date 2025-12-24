@@ -1,6 +1,9 @@
 // src/api/content.js
 import { supabase } from './supabaseClient';
 
+// TEMPORARY FLAG: Set to true to disable database fetching
+const DISABLE_DATABASE = true;
+
 // Cache for default language
 let defaultLanguageCache = null;
 
@@ -92,6 +95,24 @@ export async function fetchTranslation(key, language = null) {
 
 // Settings with translations
 export async function fetchSiteSettings(language = null) {
+  if (DISABLE_DATABASE) {
+    // Return default sauce shop settings
+    return {
+      id: 1,
+      hero_title: "Welcome to Dixie Mills",
+      hero_subtitle: "Premium Sauces, Ketchup & Mayonnaise - Crafted with Care, Served with Pride",
+      hero_image: "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=1600&h=800&fit=crop",
+      value_prop_title: "Why Dixie Mills?",
+      value_prop_subtitle: "Crafting premium sauces and condiments that bring flavor to life",
+      categories_title: "Explore Our Products",
+      categories_subtitle: "Discover our wide range of premium sauces, ketchup, mayonnaise, and condiments",
+      new_arrivals_title: "New Arrivals",
+      new_arrivals_subtitle: "Check out our latest products and seasonal offerings",
+      brands_title: "What Our Customers Say",
+      brands_subtitle: "Join thousands of satisfied customers who trust Dixie Mills for quality"
+    };
+  }
+  
   const lang = language || getCurrentLanguage();
   const settings = await handle(supabase.from('site_settings').select('*').eq('id', 1).single());
   
@@ -131,6 +152,11 @@ export async function fetchSiteSettings(language = null) {
 
 // Brands
 export async function fetchBrands() {
+  if (DISABLE_DATABASE) {
+    // Return empty array to show no brands
+    return [];
+  }
+  
   return handle(
     supabase.from('brands').select('*').order('sort_order', { ascending: true }).order('id', { ascending: true })
   );
@@ -138,6 +164,36 @@ export async function fetchBrands() {
 
 // Categories
 export async function fetchCategories(language = null) {
+  if (DISABLE_DATABASE) {
+    // Return sauce categories
+    return [
+      {
+        id: 1,
+        name: "Sauces",
+        slug: "sauces",
+        description: "Our premium sauce collection",
+        image: "https://images.unsplash.com/photo-1472476443507-c7a5948772fc?w=800&h=600&fit=crop",
+        sort_order: 1
+      },
+      {
+        id: 2,
+        name: "Ketchup",
+        slug: "ketchup",
+        description: "Classic and gourmet ketchup varieties",
+        image: "https://images.unsplash.com/photo-1592417817038-d13fd7342605?w=800&h=600&fit=crop",
+        sort_order: 2
+      },
+      {
+        id: 3,
+        name: "Mayonnaise",
+        slug: "mayonnaise",
+        description: "Creamy mayonnaise selections",
+        image: "https://images.unsplash.com/photo-1627735814101-3dc5b021acdb?w=800&h=600&fit=crop",
+        sort_order: 3
+      }
+    ];
+  }
+  
   const lang = language || getCurrentLanguage();
   const categories = await handle(
     supabase.from('categories').select('*').order('sort_order', { ascending: true }).order('id', { ascending: true })
@@ -220,6 +276,36 @@ export async function fetchProductsByCategorySlug(slug, language = null) {
 
 // Products
 export async function fetchNewProducts(language = null) {
+  if (DISABLE_DATABASE) {
+    // Return sample sauce products
+    return [
+      {
+        id: 1,
+        name: "Spicy BBQ Sauce",
+        description: "Bold and smoky with a kick",
+        image: "https://images.unsplash.com/photo-1626544827763-d516dce335e2?w=800&h=600&fit=crop",
+        price: 5.99,
+        is_new: true
+      },
+      {
+        id: 2,
+        name: "Garlic Mayo",
+        description: "Creamy with roasted garlic",
+        image: "https://images.unsplash.com/photo-1628185398198-8df21b87b561?w=800&h=600&fit=crop",
+        price: 4.99,
+        is_new: true
+      },
+      {
+        id: 3,
+        name: "Sweet Chili Sauce",
+        description: "Perfect balance of sweet and heat",
+        image: "https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=800&h=600&fit=crop",
+        price: 6.49,
+        is_new: true
+      }
+    ];
+  }
+  
   const lang = language || getCurrentLanguage();
   const products = await handle(
     supabase
@@ -303,6 +389,28 @@ export async function fetchProductById(productId, language = null) {
 
 // Services
 export async function fetchServices(language = null) {
+  if (DISABLE_DATABASE) {
+    // Return sauce-related services
+    return [
+      {
+        id: 1,
+        title: "Private Labeling",
+        description: "Create your own brand with our products",
+        features: ["Custom packaging", "Recipe customization", "Quality guarantee"],
+        icon: "🏷️",
+        sort_order: 1
+      },
+      {
+        id: 2,
+        title: "Bulk Orders",
+        description: "Special pricing for restaurants and retailers",
+        features: ["Volume discounts", "Fast delivery", "Dedicated support"],
+        icon: "📦",
+        sort_order: 2
+      }
+    ];
+  }
+  
   const lang = language || getCurrentLanguage();
   const services = await handle(
     supabase.from('services').select('*').order('sort_order', { ascending: true }).order('id', { ascending: true })
@@ -338,6 +446,25 @@ export async function fetchServices(language = null) {
 
 // About
 export async function fetchAboutSections(language = null) {
+  if (DISABLE_DATABASE) {
+    // Return sauce company about sections
+    return [
+      {
+        id: 1,
+        title: "Our Story",
+        content: "Founded in 1995, Dixie Mills has been crafting premium sauces and condiments for over 25 years. What started as a family recipe has grown into a beloved brand trusted by thousands.",
+        image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
+        sort_order: 1
+      },
+      {
+        id: 2,
+        title: "Our Mission",
+        content: "To bring joy to every meal with our carefully crafted sauces and condiments. We believe that great food brings people together, and our products are made to enhance those special moments.",
+        sort_order: 2
+      }
+    ];
+  }
+  
   const lang = language || getCurrentLanguage();
   const sections = await handle(
     supabase
@@ -414,6 +541,30 @@ export async function fetchTeamMembers(language = null) {
 
 // Contact
 export async function fetchContactBlocks(language = null) {
+  if (DISABLE_DATABASE) {
+    // Return sauce company contact info
+    return [
+      {
+        id: 1,
+        title: "Visit Our Factory",
+        content_lines: ["123 Flavor Street", "Sauce City, SC 12345"],
+        sort_order: 1
+      },
+      {
+        id: 2,
+        title: "Contact Us",
+        content_lines: ["Phone: (555) 123-4567", "Email: info@dixiemills.com"],
+        sort_order: 2
+      },
+      {
+        id: 3,
+        title: "Business Hours",
+        content_lines: ["Monday - Friday: 9 AM - 6 PM", "Saturday: 10 AM - 4 PM", "Sunday: Closed"],
+        sort_order: 3
+      }
+    ];
+  }
+  
   const lang = language || getCurrentLanguage();
   const blocks = await handle(
     supabase
@@ -507,6 +658,17 @@ export async function fetchCollapsibleSections(language = null) {
 
 // Header Navigation with translations
 export async function fetchHeaderNavItems(language = null) {
+  if (DISABLE_DATABASE) {
+    // Return sauce shop navigation
+    return [
+      { id: 1, name: "Home", link: "/", sort_order: 1, is_active: true },
+      { id: 2, name: "Products", link: "/products", sort_order: 2, is_active: true },
+      { id: 3, name: "About", link: "/about-us", sort_order: 3, is_active: true },
+      { id: 4, name: "Services", link: "/services", sort_order: 4, is_active: true },
+      { id: 5, name: "Contact", link: "/contact-us", sort_order: 5, is_active: true }
+    ];
+  }
+  
   const lang = language || getCurrentLanguage();
   const navItems = await handle(
     supabase
@@ -545,6 +707,16 @@ export async function fetchHeaderNavItems(language = null) {
 
 // Footer Settings
 export async function fetchFooterSettings(language = null) {
+  if (DISABLE_DATABASE) {
+    // Return sauce company footer settings
+    return {
+      id: 1,
+      office_address_lines: ["123 Flavor Street", "Sauce City, SC 12345", "United States"],
+      about_text: "Dixie Mills - Crafting premium sauces and condiments since 1995. Bringing flavor to your table with every bottle.",
+      copyright_text: "© 2024 Dixie Mills. All rights reserved."
+    };
+  }
+  
   const lang = language || getCurrentLanguage();
   const settings = await handle(supabase.from('footer_settings').select('*').eq('id', 1).single());
   
@@ -577,6 +749,16 @@ export async function fetchFooterSettings(language = null) {
 
 // Footer Links
 export async function fetchFooterLinks(language = null) {
+  if (DISABLE_DATABASE) {
+    // Return sauce shop footer links
+    return [
+      { id: 1, label: "Privacy Policy", url: "/privacy", sort_order: 1, is_active: true },
+      { id: 2, label: "Terms of Service", url: "/terms", sort_order: 2, is_active: true },
+      { id: 3, label: "FAQ", url: "/faq", sort_order: 3, is_active: true },
+      { id: 4, label: "Recipes", url: "/recipes", sort_order: 4, is_active: true }
+    ];
+  }
+  
   const lang = language || getCurrentLanguage();
   const links = await handle(
     supabase
