@@ -547,13 +547,13 @@ export async function fetchContactBlocks(language = null) {
       {
         id: 1,
         title: "Visit Our Factory",
-        content_lines: ["123 Flavor Street", "Sauce City, SC 12345"],
+        content_lines: ["Ali Mubarak Street", "Tanta, Gharbia", "Egypt"],
         sort_order: 1
       },
       {
         id: 2,
         title: "Contact Us",
-        content_lines: ["Phone: (555) 123-4567", "Email: info@dixiemills.com"],
+        content_lines: ["Phone: +20 40 3344556", "Email: info@dixiemills.com"],
         sort_order: 2
       },
       {
@@ -711,7 +711,7 @@ export async function fetchFooterSettings(language = null) {
     // Return sauce company footer settings
     return {
       id: 1,
-      office_address_lines: ["123 Flavor Street", "Sauce City, SC 12345", "United States"],
+      office_address_lines: ["Ali Mubarak Street", "Tanta, Gharbia", "Egypt"],
       about_text: "Dixie Mills - Crafting premium sauces and condiments since 1995. Bringing flavor to your table with every bottle.",
       copyright_text: "© 2024 Dixie Mills. All rights reserved."
     };

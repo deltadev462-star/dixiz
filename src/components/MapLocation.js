@@ -99,7 +99,7 @@ const MapLocation = () => {
   const phoneBlock = blockByKey['phone'];
   const hoursBlock = blockByKey['hours'];
 
-  const mapSrc = settings?.map_embed_url || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!...';
+  const mapSrc = settings?.map_embed_url || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3438.1970720657393!2d30.998683315113598!3d30.786484081584676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7c966c1c0c8e9%3A0x8c7d3c2f8b9e4a7d!2sAli%20Mubarak%20St%2C%20Tanta%2C%20Gharbia%20Governorate%2C%20Egypt!5e0!3m2!1sen!2sus!4v1703393200000!5m2!1sen!2sus';
 
   return (
     <Box sx={{ py: { xs: 4, md: 8 }, backgroundColor: '#ffffff' }}>
@@ -115,7 +115,7 @@ const MapLocation = () => {
             fontSize: { xs: '1.75rem', md: '2.5rem' },
           }}
         >
-          {t('map.title', 'Visit Our Medical Center')}
+          {t('map.title', 'Visit Our Factory')}
         </Typography>
 
         {/* Map Section - Full Width on Desktop */}
@@ -156,7 +156,7 @@ const MapLocation = () => {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Medical Center Location"
+                title="Dixie Mills Factory Location"
               />
             )}
           </Paper>
@@ -319,7 +319,7 @@ const MapLocation = () => {
               }}
               onClick={() =>
                 window.open(
-                  'https://www.google.com/maps',
+                  'https://www.google.com/maps/place/Ali+Mubarak+St,+Tanta,+Gharbia+Governorate,+Egypt',
                   '_blank'
                 )
               }
