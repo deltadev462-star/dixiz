@@ -9,6 +9,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  CI = "false"
 
 [context.production.environment]
   REACT_APP_SUPABASE_URL = "Set this in Netlify dashboard"
