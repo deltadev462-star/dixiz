@@ -13,7 +13,7 @@ const HeroSection = () => {
     hero_subtitle:
       'Crafting exceptional flavors for foodservice and retail. From classic ketchup to gourmet sauces, we bring taste to every table.',
     hero_image_url:
-      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1920&q=80',
+      'https://images.unsplash.com/photo-1613564834361-9436948817d1?auto=format&fit=crop&w=1920&q=80',
   });
 
   useEffect(() => {
